@@ -1,7 +1,6 @@
 package paikiuslog
 
 import (
-	"fmt"
 	"log"
 	"os"
 	"time"
@@ -22,10 +21,11 @@ func SaveLog(fileLocation string, text string) {
 		f, _ := os.Create(path)
 		defer f.Close()
 		f.WriteString(currentDate.Format("2006-01-02 15:04:05") + " => " + text + "\n\r")
+		log.Println(text)
 	} else {
-		fmt.Println("here")
 		f, _ := os.OpenFile(path, os.O_APPEND|os.O_WRONLY, 0777)
 		defer f.Close()
 		f.WriteString(currentDate.Format("2006-01-02 15:04:05") + " => " + "demm" + "\n\r")
+		log.Println(text)
 	}
 }
