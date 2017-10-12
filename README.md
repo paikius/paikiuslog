@@ -1,0 +1,1 @@
+# Paikius-Log for Golang
